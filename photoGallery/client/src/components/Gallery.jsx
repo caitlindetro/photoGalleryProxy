@@ -4,9 +4,8 @@ import Photo from './Photo.jsx';
 import ExpandButton from './ExpandButton.jsx';
 import RightArrow from './RightArrow.jsx';
 import LeftArrow from './LeftArrow.jsx';
-import normalizePort from 'normalize-port';
 
-const port = normalizePort(process.env.PORT || '8081');
+const port = 8081;
 
 class Gallery extends React.Component {
   constructor(props) {

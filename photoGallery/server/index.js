@@ -27,7 +27,7 @@ app.get('/photos/:propertyId', function(req, res) {
   });
 });
 
-var port = normalizePort(process.env.PORT || '8081');
+var port = 8081;
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
