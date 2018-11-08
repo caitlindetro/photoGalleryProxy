@@ -28,11 +28,11 @@ class Gallery extends React.Component {
   componentDidMount() {
     let propId = Number(window.location.pathname.replace(/\//, ''));
     if (propId > 0 && propId <= 100) {
-      $.get(`${port}` + propId, result => {
+      $.get(`http://localhost:${port}/photos/` + propId, result => {
         this.setState({view: 'gallery', currentPropertyId: propId, photos: result, currentPhoto: 0, isExpanded: false});
       })
     } else {
-      $.get(`${port}`, result => {
+      $.get(`http://localhost:${port}/photos`, result => {
         this.setState({currentPropertyId: result[0]})
       }, 'json');
     }
