@@ -2,11 +2,13 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const normalizePort = require('normalize-port');
+const cors = require('cors');
 
 const Photos = require('../db/index.js');
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/../client/dist'));
