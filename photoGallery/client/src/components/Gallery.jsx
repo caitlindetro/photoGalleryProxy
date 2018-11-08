@@ -4,6 +4,9 @@ import Photo from './Photo.jsx';
 import ExpandButton from './ExpandButton.jsx';
 import RightArrow from './RightArrow.jsx';
 import LeftArrow from './LeftArrow.jsx';
+import normalizePort from 'normalize-port';
+
+const port = normalizePort(process.env.PORT || '8081');
 
 class Gallery extends React.Component {
   constructor(props) {
@@ -25,11 +28,11 @@ class Gallery extends React.Component {
   componentDidMount() {
     let propId = Number(window.location.pathname.replace(/\//, ''));
     if (propId > 0 && propId <= 100) {
-      $.get('http://localhost:3003/photos/' + propId, result => {
+      $.get(`${port}` + propId, result => {
         this.setState({view: 'gallery', currentPropertyId: propId, photos: result, currentPhoto: 0, isExpanded: false});
       })
     } else {
-      $.get('http://localhost:3003/photos', result => {
+      $.get(`${port}`, result => {
         this.setState({currentPropertyId: result[0]})
       }, 'json');
     }

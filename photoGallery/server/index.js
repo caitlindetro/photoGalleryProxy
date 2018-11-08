@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const normalizePort = require('normalize-port');
 
 const Photos = require('../db/index.js');
 
@@ -24,7 +25,7 @@ app.get('/photos/:propertyId', function(req, res) {
   });
 });
 
-const port = 3003;
+var port = normalizePort(process.env.PORT || '8081');
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
