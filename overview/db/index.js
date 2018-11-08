@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/fec', { useNewUrlParser: true }).then(console.log('mongoose connected!'));
+//mongoose.connect('mongodb://localhost/fec', { useNewUrlParser: true }).then(console.log('mongoose connected!'));
+mongoose.connect('mongodb+srv://caitlindetro:caitrten4!@cluster0-62cuj.mongodb.net/fec', { useNewUrlParser: true }).then(console.log('mongoose connected!'));
 let db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
