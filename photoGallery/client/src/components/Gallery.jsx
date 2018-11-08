@@ -5,8 +5,6 @@ import ExpandButton from './ExpandButton.jsx';
 import RightArrow from './RightArrow.jsx';
 import LeftArrow from './LeftArrow.jsx';
 
-const port = 8081;
-
 class Gallery extends React.Component {
   constructor(props) {
     super(props);
@@ -27,11 +25,11 @@ class Gallery extends React.Component {
   componentDidMount() {
     let propId = Number(window.location.pathname.replace(/\//, ''));
     if (propId > 0 && propId <= 100) {
-      $.get(`http://localhost:${port}/photos/` + propId, result => {
+      $.get('http://Fec1PhotoGallery.us-east-1.elasticbeanstalk.com/photos/' + propId, result => {
         this.setState({view: 'gallery', currentPropertyId: propId, photos: result, currentPhoto: 0, isExpanded: false});
       })
     } else {
-      $.get(`http://localhost:${port}/photos`, result => {
+      $.get('http://Fec1PhotoGallery.us-east-1.elasticbeanstalk.com/photos', result => {
         this.setState({currentPropertyId: result[0]})
       }, 'json');
     }

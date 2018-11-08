@@ -1,7 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const normalizePort = require('normalize-port');
 const cors = require('cors');
 
 const Photos = require('../db/index.js');
