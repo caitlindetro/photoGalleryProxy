@@ -30,8 +30,8 @@ class Gallery extends React.Component {
       })
     } else {
       $.get('http://Fec1PhotoGallery.us-east-1.elasticbeanstalk.com/photos', result => {
-        this.setState({currentPropertyId: result[0]})
-      }, 'json');
+        this.setState({view: 'gallery', currentPropertyId: 1, photos: result, currentPhoto: 0, isExpanded: false});
+      })
     }
   }
 

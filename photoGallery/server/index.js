@@ -17,7 +17,7 @@ app.get('/:propertyId', function(req, res) {
 });
 
 app.get('/photos', (req, res) => {
-  Photos.find({}, (err, data) => {
+  Photos.find({propertyId: 1}, (err, data) => {
     if (err) {
       res.send(500, 'Error retrieving photos');
     } else {
