@@ -16,6 +16,16 @@ app.get('/:propertyId', function(req, res) {
   res.sendFile(path.join(__dirname + '/../client/dist/index.html'));
 });
 
+app.get('/photos', (req, res) => {
+  Photos.find({}, (err, data) => {
+    if (err) {
+      res.send(500, 'Error retrieving photos');
+    } else {
+      res.json(data);
+    }
+  });
+});
+
 app.get('/photos/:propertyId', function(req, res) {
   Photos.find({propertyId: req.params.propertyId}, function(err, data) {
     if (err) {
