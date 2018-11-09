@@ -7,7 +7,7 @@ const port = 8081;
 
 app.use(cors);
 console.log('****:', __dirname);
-app.use(express.static(path.join(`${__dirname}/public`)));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/:listingId', (req, res) => {
   res.sendFile(path.join(`${__dirname}/public/index.html`));
