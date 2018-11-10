@@ -53,8 +53,8 @@ button:hover {
 .gallery {
     margin-top: 135px;
     max-width: 85%;
-    border-top: 0.5px solid lightgray;
-    border-right: 0.5px solid lightgray;
+    border-top: 1px solid #d0d6db;
+    border-right: 1px solid #d0d6db;
     height: 500px;
     display: flex;
     position: relative;
